@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="donkey_control" type="chase_gostop_yolo.py" name="chase_gostop" />
+  <node pkg="donkey_control" type="blob_chase.py" name="blob_chase" />
+</launch>

@@ -1,0 +1,13 @@
+<launch>
+  <arg name="racecar_version" />
+  <arg name="joy_teleop_config"
+       default="$(find donkey_joy)/config/joy_teleop.yaml" />
+
+  <rosparam file="$(arg joy_teleop_config)" command="load" />
+
+  <node pkg="joy" type="joy_node" name="joy_node" />
+
+  <node pkg="donkey_joy" type="joy_teleop_axes.py" name="joy_teleop_axes" />
+
+  <node pkg="donkey_control" type="joy_control.py" name="joy_control" />
+</launch>
